@@ -7,10 +7,10 @@ const Header = () => {
                 <a className="navbar-brand">Dyslexic Reader</a>
                 <div className="collapse navbar-collapse">
                     <div className="navbar-nav">
-                        <a href="#" className="nav-item nav-link">
+                        <a href="/" className="nav-item nav-link">
                             Input
                         </a>
-                        <a href="#" className="nav-item nav-link">
+                        <a href="/o" className="nav-item nav-link">
                             Options
                         </a>
                     </div>
