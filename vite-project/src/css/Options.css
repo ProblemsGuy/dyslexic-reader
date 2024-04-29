@@ -1,0 +1,16 @@
+div.container {
+    margin-top: 30px;
+}
+
+div.alphabet-item {
+    display: "flex";
+    justify-content: "start";
+    margin: "2px";
+    max-height: "16px";
+}
+
+div.color-square {
+    width: "16px";
+    height: "16px";
+    background-color: "#ff6347";
+}

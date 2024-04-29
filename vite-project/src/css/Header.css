@@ -1,0 +1,9 @@
+* {
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a.navbar-brand{
+    margin-left: 20px;
+}
+

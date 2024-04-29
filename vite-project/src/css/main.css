@@ -1,0 +1,13 @@
+div.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+body {
+    background-color: rgb(20, 24, 24);
+}

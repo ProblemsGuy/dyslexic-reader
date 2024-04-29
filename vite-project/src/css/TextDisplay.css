@@ -1,0 +1,11 @@
+div.text-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify; /* Center text horizontally */
+    max-width: 400px;
+    margin-top: 50px;
+    color: transparent; 
+   
+}
+
