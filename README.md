@@ -13,8 +13,8 @@ The website which displays this could optionally have a functionality for saving
 
 -   As a user, I want to be able to input text into an input box that the displays it in the special format.
 -   As a user, I want words to be colored in accordance to the designer's synesthesia.
-- As a user, I want to be able to adjust the colors of letters as I see fit.
-- As a user, I want letters to visually flicker and change.
-- As a user, I want words to jump around on the page short distances
-- As a user, I want words to come out of focus if the mouse cursor is not close by.
-- As a user, I want to be able to save inputs I put into this website, like the text and colors of letters.
+-   As a user, I want to be able to adjust the colors of letters as I see fit.
+-   As a user, I want letters to visually flicker and change.
+-   As a user, I want words to jump around on the page short distances
+-   As a user, I want words to come out of focus if the mouse cursor is not close by.
+-   As a user, I want to be able to save inputs I put into this website, like the text and colors of letters.

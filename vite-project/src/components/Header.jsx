@@ -1,4 +1,5 @@
 import "../css/Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -7,12 +8,12 @@ const Header = () => {
                 <a className="navbar-brand">Dyslexic Reader</a>
                 <div className="collapse navbar-collapse">
                     <div className="navbar-nav">
-                        <a href="/" className="nav-item nav-link">
+                        <Link to="/" style={{ textDecoration: "none", color:"black", padding:"4px" }}>
                             Input
-                        </a>
-                        <a href="/o" className="nav-item nav-link">
+                        </Link>
+                        <Link to="/o" style={{ textDecoration: "none", color:"black", padding:"4px" }}>
                             Options
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </nav>
