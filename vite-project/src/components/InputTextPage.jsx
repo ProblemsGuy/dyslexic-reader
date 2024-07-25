@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import "../css/InputTextPage.css";
 
 const InputTextPage = ({ setText }) => {
-    const [inputText, setInputText] = useState("");
+    const defaultText = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a little. Barry! Breakfast is ready! Coming! Hang on a second. Hello? Barry? Adam? Can you believe this is happening? I can't."
+    const [inputText, setInputText] = useState(defaultText);
     const [failedText, setfailedText] = useState(false);
     let containsText = inputText != "";
 
@@ -20,6 +21,7 @@ const InputTextPage = ({ setText }) => {
     };
 
     const maxCharLength = 500;
+   
 
     return (
         <>
@@ -36,6 +38,7 @@ const InputTextPage = ({ setText }) => {
                     cols="60"
                     onChange={handleTextChange}
                     maxLength={maxCharLength}
+                    defaultValue={defaultText}
                     required
                 ></textarea>
             </div>

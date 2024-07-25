@@ -5,6 +5,7 @@ const Header = () => {
     return (
         <>
             <nav className="navbar navbar-expand-sm navbar-light bg-light">
+                <img src="/icon.svg" width="40px" className="logo"/>
                 <a className="navbar-brand">Dyslexic Reader</a>
                 <div className="collapse navbar-collapse">
                     <div className="navbar-nav">

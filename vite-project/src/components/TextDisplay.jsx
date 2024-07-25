@@ -1,32 +1,38 @@
 import React, { useState, useEffect } from "react";
 import "../css/TextDisplay.css";
 
-
-const TextDisplay = ({ options, text, alphabet }) => {
+const TextDisplay = ({ text, alphabet }) => {
     const [glitchedText, setGlitchedText] = useState(text);
-    const alphabetKeys = Object.keys(alphabet);
+    const alphabetKeys = Object.keys(alphabet.characters);
+    const options = alphabet.options;
 
     useEffect(() => {
         let glitchInterval;
         let jumpInterval;
         let newGlitchedText = glitchedText;
         let preserveText = glitchedText;
-    
+
         if (options.flickering) {
             glitchInterval = setInterval(() => {
-                newGlitchedText = newGlitchedText.split("").map((char, index) => {
-                    if (Math.random() < 0.02 && alphabetKeys.includes(char)) {
-                        return String.fromCharCode(
-                            Math.floor(Math.random() * 26) + "a".charCodeAt(0)
-                        );
-                    } else {
-                        return preserveText[index];
-                    }
-                });
+                newGlitchedText = newGlitchedText
+                    .split("")
+                    .map((char, index) => {
+                        if (
+                            Math.random() < 0.02 &&
+                            alphabetKeys.includes(char)
+                        ) {
+                            return String.fromCharCode(
+                                Math.floor(Math.random() * 26) +
+                                    "a".charCodeAt(0)
+                            );
+                        } else {
+                            return preserveText[index];
+                        }
+                    });
                 newGlitchedText = newGlitchedText.join("");
             }, 600);
         }
-    
+
         if (options.jumping) {
             jumpInterval = setInterval(() => {
                 const placeholderTextWordList = preserveText.split(" ");
@@ -40,7 +46,7 @@ const TextDisplay = ({ options, text, alphabet }) => {
                             charLengthForward < averageLineCharLength &&
                             i > 0
                         ) {
-                            charLengthForward += textWordList[i].length +1;
+                            charLengthForward += textWordList[i].length + 1;
                             i--;
                         }
                         [textWordList[i], textWordList[index]] = [
@@ -54,7 +60,7 @@ const TextDisplay = ({ options, text, alphabet }) => {
                 newGlitchedText = textWordList.join(" ");
             }, 900);
         }
-        
+
         const setterInterval = setInterval(() => {
             setGlitchedText(newGlitchedText);
         }, 100);
@@ -65,8 +71,6 @@ const TextDisplay = ({ options, text, alphabet }) => {
             clearInterval(setterInterval);
         };
     }, [options.flickering, options.jumping]);
-
-   
 
     const [distances, setDistances] = useState([]);
 
@@ -129,8 +133,8 @@ const TextDisplay = ({ options, text, alphabet }) => {
                 //Sets the base color, if the character isn't in the alphabet.
                 letterColor = "#ffffff";
                 //The color is set in accordance with the coloring in the alphabet.
-                if (alphabet.hasOwnProperty(letter)) {
-                    letterColor = alphabet[letter];
+                if (alphabet.characters.hasOwnProperty(letter)) {
+                    letterColor = alphabet.characters[letter];
                 }
             }
 

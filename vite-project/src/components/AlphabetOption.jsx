@@ -1,14 +1,16 @@
-
 import { useState } from "react";
 
 const AlphabetOption = ({ char, alphabet, setAlphabet }) => {
-
     const handleColorChange = (event) => {
-        setAlphabet((characters) => ({
-            ...characters,
-            [event.target.id]: event.target.value,
+        setAlphabet((alpha) => ({
+            ...alpha,
+            characters: {
+                ...alpha.characters,
+                [event.target.id]: event.target.value,
+                [event.target.id.toLowerCase()]: event.target.value
+            },
         }));
-    }
+    };
 
     return (
         <>
@@ -25,9 +27,9 @@ const AlphabetOption = ({ char, alphabet, setAlphabet }) => {
                 <form>
                     <input
                         type="color"
-                        class="form-control form-control-color"
+                        className="form-control-color"
                         id={char}
-                        value={alphabet[char]}
+                        value={alphabet.characters[char]}
                         onChange={handleColorChange}
                     />
                 </form>
